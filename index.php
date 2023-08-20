@@ -1,3 +1,9 @@
+<?php
+
+    require_once('./connectdb.php');
+
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
