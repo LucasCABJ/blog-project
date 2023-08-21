@@ -12,6 +12,10 @@
 
     <div class="sidebar__register">
         <h3 class='form__title'><i class='fa-solid fa-address-card form__icon'></i>Registrarse</h3>
+        <?php if(isset($_SESSION['completado'])):?>
+            <?php $sucess_alert = $_SESSION['completado'];?>
+            <?="<div class='alerta alerta-success'>$sucess_alert</div>"?>
+        <?php endif; ?>
         <?php echo isset($_SESSION['errores']) ? mostrarError($_SESSION['errores'], 'general') : '' ?>
         <form action="./pages/register.php" method="post" class="form__form">
             <label for="nombre" class='form__label'>Nombre</label>
@@ -32,5 +36,9 @@
             <input type="submit" name='submit' value="Registrarse" class="form__submit">
         </form>
         <?php borrarErrores();?>
+        <?php if(isset($_SESSION['completado'])):?>
+            <?php $_SESSION['completado'] = null;?>
+            <?php $sucess_alert = null;?>
+        <?php endif; ?>
     </div>
 </aside>
