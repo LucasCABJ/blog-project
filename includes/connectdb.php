@@ -6,4 +6,6 @@ if(mysqli_connect_errno()){
     echo "Error connecting to database";
 }
 
+session_start();
+
 ?>
