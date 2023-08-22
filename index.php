@@ -44,23 +44,6 @@
 
             </a>
 
-            <a href="www.google.com" target="_blank" class="entradas__entrada">
-
-                <div class="entrada__img-container">
-                    <img src="./assets/img/post-01.webp" alt="Post Picture" class="entrada__img">
-                </div>
-
-                <div class="entrada__container">
-
-                    <div class="entrada__content">
-                        <h2 class='entrada__title'>Con mamá</h2>
-                        <h3 class='entrada__author'>Camila Vene</h3>
-                        <p class='entrada__fecha'>2023-08-01</p>    
-                    </div>
-                </div>
-
-            </a>
-
         </div>
 
     </section>

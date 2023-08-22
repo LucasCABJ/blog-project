@@ -6,6 +6,7 @@
     <title>Tempera | Blog de literatura</title>
     <link rel="stylesheet" href="./assets/styles/style.css">
     <link rel="stylesheet" href="./assets/fontawesome-free-6.4.2-web/fontawesome-free-6.4.2-web/css/all.min.css">
+    <link rel="shortcut icon" href="../assets/img/icon.ico" type="image/x-icon">
 </head>
 <body>
     <!-- HEADER -->

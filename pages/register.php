@@ -1,8 +1,7 @@
 <?php
 
 if(isset($_POST)){
-    
-        session_start();
+
         require_once('../includes/connectdb.php');
 
         $nombre = !empty($_POST['nombre']) ? trim($_POST['nombre']) : false;
@@ -43,17 +42,26 @@ if(isset($_POST)){
 
         if(count($errores) == 0) {
 
-            // Cifrado de contrasena
-
-            $password_segura = password_hash($password, PASSWORD_BCRYPT, ['cost'=>4]);
-            
-            $query = "INSERT INTO usuario VALUES(null, '$nombre', '$apellido', '$email', '$password_segura', CURDATE());";
+            $query = "SELECT * FROM usuario WHERE email = '$email'";
             $execute_query = mysqli_query($connectdb, $query);
             
-            if($execute_query) {
-                $_SESSION['completado'] = 'El registro se ha completado con exito.';
+            if($result = mysqli_fetch_assoc($execute_query)) {
+
+                $_SESSION['errores']['general'] = 'El correo ya se encuentra registrado.';
+
             } else {
-                $_SESSION['errores']['general'] = 'Fallo al registrar el usuario.';
+                // Cifrado de contrasena
+
+                $password_segura = password_hash($password, PASSWORD_BCRYPT, ['cost'=>4]);
+                
+                $query = "INSERT INTO usuario VALUES(null, '$nombre', '$apellido', '$email', '$password_segura', CURDATE());";
+                $execute_query = mysqli_query($connectdb, $query);
+                
+                if($execute_query) {
+                    $_SESSION['completado'] = 'El registro se ha completado con exito.';
+                } else {
+                    $_SESSION['errores']['general'] = 'Fallo al registrar el usuario.';
+                }
             }
 
 

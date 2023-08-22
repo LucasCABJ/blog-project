@@ -195,17 +195,87 @@ body {
 /* Alertas */
 
 .alerta {
+    background-color: #aaa;
+    padding: 15px 10px;
+    border-radius: 5px;
+    border: 2px solid rgba(0, 0, 0, 0.5);
     margin-bottom: 15px;
     font-size: 14px;
 }
 
 .alerta-error {
-    color: red;
+    background-color: red;
+    color: #fff;
 }
 
 .alerta-success {
-    color: green;
+    background-color: green;
+    color: #fff;
 }
+
+/* MI CUENTA */
+
+.sidebar__user-img-container {
+    width: 35px;
+    height: 35px;
+}
+
+.sidebar__user-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.sidebar__user {
+    width: 100%;
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.sidebar__username-text {
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.sidebar__user-img-container {
+    margin-right: 10px;
+    border-radius: 50%;
+}
+
+.sidebar__user-img {
+    border-radius: 50%;
+}
+
+.sidebar__user-options {
+    list-style: none;
+}
+
+.sidebar__option {
+    margin-bottom: 5px;
+}
+
+.sidebar__link-icon {
+    margin-right: 8px;
+}
+
+.sidebar__link {
+    color: #545454;
+}
+
+.sidebar__link:hover {
+    color: #434343;
+    text-decoration: underline;
+}
+
+.logout-link {
+    color: #cb2c2c;
+}
+
+.logout-link:hover {
+    color: #a72323;
+}
+
 
 /* LOGIN AND REGISTER */
 
@@ -213,7 +283,7 @@ body {
     grid-area: sidebar;
 }
 
-.sidebar__login, .sidebar__register {
+.sidebar__login, .sidebar__register, .sidebar__user-container {
     padding: 30px;
     margin-bottom: 20px;
     background-color: #f3f3f3;
@@ -221,7 +291,6 @@ body {
     
     box-shadow: 0px 10px 10px -5px rgba(0, 0, 0, 0.23);
 }
-
 
 .form__title {
     margin-bottom: 15px;
@@ -376,12 +445,19 @@ body {
         padding-top: 105px;
     }
 
-    .sidebar__login, .sidebar__register {
+    .sidebar__login, .sidebar__register, .sidebar__user-container {
         border-radius: 0;
     }
 
     .main__entradas {
         border-radius: 0;
         margin-bottom: 20px;
+    }
+
+    .entrada__img-container {
+        max-width: 100px;
+        min-width: 100px;
+        max-height: 100px;
+        min-height: 100px;
     }
 }
