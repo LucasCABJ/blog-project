@@ -19,7 +19,7 @@
                 <div class="entrada__container">
 
                     <div class="entrada__content">
-                        <h2 class='entrada__title'>Que lindo es chapar</h2>
+                        <h2 class='entrada__title'>Que lindo chapar</h2>
                         <h3 class='entrada__author'>Camila Vene</h3>
                         <p class='entrada__fecha'>2023-08-01</p>
                     </div>

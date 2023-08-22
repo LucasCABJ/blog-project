@@ -23,19 +23,26 @@
                 <li class="navmenu__item">
                     <a href="#" class="navmenu__link"><i class='fa-solid fa-home navmenu__icon'></i>Inicio</a>
                 </li>
-                
-                <li class="navmenu__item">
-                    <a href="#" class="navmenu__link"><i class='fa-solid fa-book navmenu__icon'></i>Categoria 1</a>
-                </li>
-                
-                <li class="navmenu__item">
-                    <a href="#" class="navmenu__link"><i class='fa-solid fa-book navmenu__icon'></i>Categoria 2</a>
-                </li>
-                
-                <li class="navmenu__item">
-                    <a href="#" class="navmenu__link"><i class='fa-solid fa-book navmenu__icon'></i>Categoria 3</a>
-                </li>
 
+                <?php $categorias = getCategorias()?>
+                <?php while($result = mysqli_fetch_assoc($categorias)):?>
+                    <li class="navmenu__item navmenu__item-mobile">
+                        <a href="../pages/categoria.php?id=<?=$result['id_categoria']?>" class="navmenu__link">
+                            <i class='fa-solid fa-book navmenu__icon'></i>
+                            <?=$result['nombre']?>
+                        </a>
+                    </li>
+                    <?php endwhile; ?>
+                
+                <li class="navmenu__item" id='header__categorias'>
+                    <a href="#" class="navmenu__link"><i class='fa-solid fa-book navmenu__icon'></i>Categorias<i class="fa-solid fa-caret-down categorias__flecha"></i></a>
+                    <div class="categorias__container">
+                        <?php $categorias = getCategorias()?>
+                        <?php while($result = mysqli_fetch_assoc($categorias)):?>
+                            <a href="../pages/categoria.php?id=<?=$result['id_categoria']?>" class="categorias__categoria"><?=$result['nombre']?></a>
+                        <?php endwhile; ?>
+                    </div>
+                </li>
                 <li class="navmenu__item">
                     <a href="#" class="navmenu__link"><i class='fa-solid fa-user navmenu__icon'></i>Contacto</a>
                 </li>

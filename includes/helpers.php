@@ -19,6 +19,15 @@ function borrarErrores() {
 
 }
 
+function getCategorias() {
+    global $connectdb;
+    
+    $query = "SELECT * FROM categoria ORDER BY id_categoria ASC";
+    $execute_query = mysqli_query($connectdb, $query);
+
+    return $execute_query;
+}
+
 
 
 ?>
