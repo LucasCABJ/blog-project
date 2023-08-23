@@ -17,7 +17,9 @@ if(isset($_POST)) {
             $query = "SELECT * FROM usuario WHERE email = '$email'";
             $execute_query = mysqli_query($connectdb, $query);
             
-            if($result = mysqli_fetch_assoc($execute_query)) {
+            if($execute_query && mysqli_num_rows($execute_query) == 1) {
+
+                $result = mysqli_fetch_assoc($execute_query);
 
                 if($result['email'] == $email && password_verify($password, $result['password'])) {
                     

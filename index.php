@@ -10,39 +10,30 @@
         <h2 class="entradas__title">Ultimas publicaciones <i class="fa-solid fa-pen-to-square entradas__icon"></i></h2>
         
         <div class="main__entradas-container">
-            <a href="www.google.com" target="_blank" class="entradas__entrada">
+
+            
+            <?php $entradas = getEntradas(); ?>
+            <?php while($entrada = mysqli_fetch_assoc($entradas)): ?>
+
+                <a href="./entrada.php?id=<?=$entrada['id_entrada']?>" class="entradas__entrada">
 
                 <div class="entrada__img-container">
-                    <img src="./assets/img/post-02.webp" alt="Post Picture" class="entrada__img">
+                    <img src="https://picsum.photos/seed/picsum/200/300" alt="Post Picture" class="entrada__img">
                 </div>
 
                 <div class="entrada__container">
 
                     <div class="entrada__content">
-                        <h2 class='entrada__title'>Que lindo chapar</h2>
-                        <h3 class='entrada__author'>Camila Vene</h3>
-                        <p class='entrada__fecha'>2023-08-01</p>
+                        <h2 class='entrada__title'><?=$entrada['nombre']?></h2>
+                        <h3 class='entrada__author'><?=$entrada['autor']?></h3>
+                        <p class='entrada__fecha'><?=$entrada['fec_publicacion']?></p>
                     </div>
+
                 </div>
 
-            </a>
+                </a>
 
-            <a href="www.google.com" target="_blank" class="entradas__entrada">
-
-                <div class="entrada__img-container">
-                    <img src="./assets/img/post-01.webp" alt="Post Picture" class="entrada__img">
-                </div>
-
-                <div class="entrada__container">
-
-                    <div class="entrada__content">
-                        <h2 class='entrada__title'>Con mamá</h2>
-                        <h3 class='entrada__author'>Camila Vene</h3>
-                        <p class='entrada__fecha'>2023-08-01</p>    
-                    </div>
-                </div>
-
-            </a>
+            <?php endwhile; ?>
 
         </div>
 
