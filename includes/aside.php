@@ -15,7 +15,7 @@
         </div>
         <ul class='sidebar__user-options'>
             <li class="sidebar__option"><a href="#" class='sidebar__link'><i class='fa-solid fa-gear sidebar__link-icon'></i>Ajustes de cuenta</a></li>
-            <li class="sidebar__option"><a href="#" class='sidebar__link'><i class='fa-solid fa-pen sidebar__link-icon'></i>Escribir entrada</a></li>
+            <li class="sidebar__option"><a href="./publicar_entrada.php" class='sidebar__link'><i class='fa-solid fa-pen sidebar__link-icon'></i>Escribir entrada</a></li>
             <li class="sidebar__option"><a href="#" class='sidebar__link'><i class='fa-solid fa-book sidebar__link-icon'></i>Crear categoria</a></li>
             <li class="sidebar__option"><a href="./pages/logout.php" class='sidebar__link logout-link'><i class='fa-solid fa-right-from-bracket sidebar__link-icon'></i>Cerrar Sesion</a></li>
         </ul>
